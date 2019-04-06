@@ -3,7 +3,7 @@
 A simplified facade over Apache POI that favors integration with ILE(RPG) datatypes.
 
 ## Build
-gradlew build
+gradlew build fatJar
 
 ## Install
 Copy the poi-all-1.0.0.jar from build\libs to a folder on IBM i. 
