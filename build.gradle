@@ -1,0 +1,39 @@
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+sourceCompatibility = 1.8
+version = "1.0.0"
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.apache.poi/poi
+	compile group: 'org.apache.poi', name: 'poi', version: '4.0.1'
+	// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.0.1'
+	
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+	
+}
+
+// Define the main class for the application
+mainClassName = 'com.github.j4ile.poi.ExcelTool'
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+	manifest {
+		attributes 'Implementation-Title': 'POI integration for ILE',
+			'Implementation-Version': version,
+			'Main-Class': mainClassName
+	}
+	baseName = project.name + '-all'
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	with jar
+}
+
