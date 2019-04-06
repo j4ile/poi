@@ -47,6 +47,9 @@ public class ExcelTool {
     int columnWriterRow = 0;
     int columnWriterCol = 0;
     
+    /**
+		Read an excel file and convert to CSV (for CPYFRMIMPF)
+	*/
     public static void main (String [] args) throws IOException{
         if(args.length==0){
             System.err.println("Usage: <file> -columns <columns> -csvFile <name> -skiphead -skiptotals -nocommas");
