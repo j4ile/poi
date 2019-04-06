@@ -76,5 +76,5 @@
        DCL-PR XTool$recalc EXTPROC(*JAVA:xlClass:'recalc');
        END-PR;
 
-       DCL-C xlClass 'com.goodville.iseries.tools.ExcelTool';
+       DCL-C xlClass 'com.github.j4ile.poi.ExcelTool';
 
